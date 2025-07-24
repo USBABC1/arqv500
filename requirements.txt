@@ -1,0 +1,59 @@
+# ARQV30 Enhanced - Dependências
+# Versões compatíveis com Python 3.11+ e 3.13
+
+# Framework principal
+Flask==2.3.3
+Flask-CORS==4.0.0
+Werkzeug==2.3.7
+
+# Banco de dados e APIs
+supabase==1.0.4
+google-generativeai==0.3.2
+requests==2.31.0
+python-dotenv==1.0.0
+
+# Processamento de documentos PDF
+reportlab==4.0.4
+fpdf2==2.7.6
+weasyprint==60.1
+
+# Processamento de dados (versões compatíveis)
+Pillow>=10.2.0
+pandas>=2.2.0
+openpyxl>=3.1.2
+
+# Processamento de documentos
+python-docx>=0.8.11
+PyPDF2>=3.0.1
+pdfplumber>=0.10.0
+
+# Web scraping (sem lxml por problemas de compilação)
+markdown>=3.5.1
+beautifulsoup4>=4.12.2
+
+# Dependências opcionais para WebSailor
+openai
+tiktoken
+transformers
+torch --index-url https://download.pytorch.org/whl/cpu
+
+# Servidor web para produção
+gunicorn==21.2.0
+
+# Dependências de desenvolvimento (opcionais)
+pytest>=7.0.0
+black>=23.0.0
+flake8>=6.0.0
+
+
+
+Flask-SQLAlchemy==3.1.1
+
+
+
+psycopg2-binary==2.9.7
+
+
+
+qwen_agent
+

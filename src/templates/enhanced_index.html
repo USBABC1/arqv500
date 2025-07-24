@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARQV30 Enhanced - Análise Ultra-Detalhada de Mercado</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enhanced-styles.css') }}">
+    
+    <style>
+        /* Inline critical CSS for faster loading */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .form-section {
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.95rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .results {
+            display: none;
+            padding: 40px;
+            background: #f8fafc;
+        }
+        
+        .status-bar {
+            background: #1f2937;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            background: #f9fafb;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .upload-area.dragover {
+            border-color: #667eea;
+            background: #e0e7ff;
+        }
+        
+        .attachment-list {
+            margin-top: 15px;
+        }
+        
+        .attachment-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .attachment-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .attachment-icon {
+            width: 24px;
+            height: 24px;
+            color: #667eea;
+        }
+        
+        .remove-attachment {
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .form-section {
+                padding: 20px;
+            }
+        }
+        
+        .feature-highlight {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .feature-highlight h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .feature-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-chart-line"></i> ARQV30 Enhanced</h1>
+            <p>Análise Ultra-Detalhada de Mercado com IA Avançada, WebSailor e Busca Profunda</p>
+        </div>
+        
+        <!-- Feature Highlight -->
+        <div class="feature-highlight">
+            <h3><i class="fas fa-rocket"></i> Versão 2.0 - Funcionalidades Avançadas</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <span>WebSailor Integration</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-search"></i>
+                    <span>Busca Profunda</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-paperclip"></i>
+                    <span>Análise de Anexos</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-brain"></i>
+                    <span>Gemini Pro 2.5</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Card -->
+        <div class="main-card">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span id="status-text">Sistema Online</span>
+                </div>
+                <div>
+                    <span id="version-info">v2.0.0</span>
+                </div>
+            </div>
+            
+            <!-- Form Section -->
+            <div class="form-section">
+                <form id="analysisForm">
+                    <div class="grid">
+                        <div>
+                            <div class="form-group">
+                                <label for="segmento">
+                                    <i class="fas fa-bullseye"></i> Segmento de Mercado *
+                                </label>
+                                <input type="text" id="segmento" name="segmento" class="form-control" 
+                                       placeholder="Ex: Produtos Digitais, E-commerce, SaaS..." required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="produto">
+                                    <i class="fas fa-box"></i> Produto/Serviço
+                                </label>
+                                <input type="text" id="produto" name="produto" class="form-control" 
+                                       placeholder="Descreva seu produto ou serviço">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="publico">
+                                    <i class="fas fa-users"></i> Público-Alvo
+                                </label>
+                                <input type="text" id="publico" name="publico" class="form-control" 
+                                       placeholder="Descreva seu público-alvo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="preco">
+                                    <i class="fas fa-dollar-sign"></i> Preço (R$)
+                                </label>
+                                <input type="number" id="preco" name="preco" class="form-control" 
+                                       placeholder="997" step="0.01">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="form-group">
+                                <label for="concorrentes">
+                                    <i class="fas fa-chess"></i> Principais Concorrentes
+                                </label>
+                                <input type="text" id="concorrentes" name="concorrentes" class="form-control" 
+                                       placeholder="Liste os principais concorrentes">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="objetivoReceita">
+                                    <i class="fas fa-chart-bar"></i> Objetivo de Receita (R$)
+                                </label>
+                                <input type="number" id="objetivoReceita" name="objetivoReceita" class="form-control" 
+                                       placeholder="100000" step="0.01">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="orcamentoMarketing">
+                                    <i class="fas fa-megaphone"></i> Orçamento Marketing (R$)
+                                </label>
+                                <input type="number" id="orcamentoMarketing" name="orcamentoMarketing" class="form-control" 
+                                       placeholder="50000" step="0.01">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="prazoLancamento">
+                                    <i class="fas fa-calendar"></i> Prazo de Lançamento
+                                </label>
+                                <input type="text" id="prazoLancamento" name="prazoLancamento" class="form-control" 
+                                       placeholder="Ex: 3 meses, 6 meses...">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- New Search Query Field -->
+                    <div class="form-group">
+                        <label for="query">
+                            <i class="fas fa-search"></i> Pesquisa Profunda na Internet (Opcional)
+                            <small style="font-weight: normal; color: #6b7280;">
+                                - Descreva o que você quer pesquisar para enriquecer a análise
+                            </small>
+                        </label>
+                        <textarea id="query" name="query" class="form-control" rows="3" 
+                                  placeholder="Ex: tendências de mercado para produtos digitais em 2024, estratégias de marketing para SaaS, análise de concorrentes..."></textarea>
+                    </div>
+                    
+                    <!-- File Upload Section -->
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-paperclip"></i> Anexos (Opcional)
+                            <small style="font-weight: normal; color: #6b7280;">
+                                - Drivers mentais, provas visuais, perfis psicológicos, dados de pesquisa
+                            </small>
+                        </label>
+                        <div class="upload-area" id="uploadArea">
+                            <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #9ca3af; margin-bottom: 10px;"></i>
+                            <p>Arraste arquivos aqui ou <strong>clique para selecionar</strong></p>
+                            <p style="font-size: 0.9rem; color: #6b7280; margin-top: 5px;">
+                                Suportados: PDF, DOC, TXT, JSON, CSV, XLS (máx. 10MB)
+                            </p>
+                            <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.txt,.json,.csv,.xlsx,.xls" style="display: none;">
+                        </div>
+                        <div class="attachment-list" id="attachmentList"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dadosAdicionais">
+                            <i class="fas fa-info-circle"></i> Dados Adicionais
+                        </label>
+                        <textarea id="dadosAdicionais" name="dadosAdicionais" class="form-control" rows="4" 
+                                  placeholder="Informações adicionais relevantes para a análise..."></textarea>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-magic"></i>
+                            Gerar Análise Ultra-Detalhada
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Loading Section -->
+            <div class="loading" id="loadingSection">
+                <div class="spinner"></div>
+                <h3>Processando Análise Ultra-Detalhada...</h3>
+                <p id="loadingStatus">Iniciando análise com IA avançada...</p>
+                <div style="margin-top: 20px; font-size: 0.9rem; color: #6b7280;">
+                    <div id="progressSteps">
+                        <div class="progress-step">⏳ Processando dados do formulário...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="results" id="resultsSection">
+                <h2><i class="fas fa-chart-pie"></i> Análise Ultra-Detalhada Concluída</h2>
+                <div id="analysisResults"></div>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <button class="btn btn-primary" onclick="generatePDF()">
+                        <i class="fas fa-file-pdf"></i>
+                        Gerar PDF
+                    </button>
+                    <button class="btn btn-primary" onclick="resetForm()" style="margin-left: 15px; background: #6b7280;">
+                        <i class="fas fa-redo"></i>
+                        Nova Análise
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div style="text-align: center; color: white; margin-top: 30px; opacity: 0.8;">
+            <p>&copy; 2024 ARQV30 Enhanced - Análise de Mercado com IA Avançada</p>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/enhanced-analysis.js') }}"></script>
+    
+    <script>
+        // Inline critical JavaScript for immediate functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check system status
+            checkSystemStatus();
+            
+            // Initialize file upload
+            initializeFileUpload();
+            
+            // Initialize form
+            initializeForm();
+        });
+        
+        function checkSystemStatus() {
+            fetch('/api/app_status')
+                .then(response => response.json())
+                .then(data => {
+                    const statusText = document.getElementById('status-text');
+                    const versionInfo = document.getElementById('version-info');
+                    
+                    if (data.status === 'running') {
+                        statusText.textContent = 'Sistema Online';
+                        statusText.style.color = '#10b981';
+                    } else {
+                        statusText.textContent = 'Sistema com Problemas';
+                        statusText.style.color = '#ef4444';
+                    }
+                    
+                    versionInfo.textContent = `v${data.version || '2.0.0'}`;
+                })
+                .catch(error => {
+                    console.error('Erro ao verificar status:', error);
+                    document.getElementById('status-text').textContent = 'Status Indisponível';
+                });
+        }
+        
+        function initializeFileUpload() {
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            
+            uploadArea.addEventListener('click', () => fileInput.click());
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+        }
+        
+        function handleFiles(files) {
+            // This will be implemented in the external JS file
+            console.log('Files selected:', files.length);
+        }
+        
+        function initializeForm() {
+            const form = document.getElementById('analysisForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                startAnalysis();
+            });
+        }
+        
+        function startAnalysis() {
+            // Show loading
+            document.querySelector('.form-section').style.display = 'none';
+            document.getElementById('loadingSection').style.display = 'block';
+            
+            // This will be implemented in the external JS file
+            console.log('Starting analysis...');
+        }
+        
+        function generatePDF() {
+            // This will be implemented in the external JS file
+            console.log('Generating PDF...');
+        }
+        
+        function resetForm() {
+            document.getElementById('resultsSection').style.display = 'none';
+            document.querySelector('.form-section').style.display = 'block';
+            document.getElementById('analysisForm').reset();
+            document.getElementById('attachmentList').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
+
