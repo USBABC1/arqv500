@@ -1,0 +1,2 @@
+Requirement already satisfied: python-docx in c:\python313\lib\site-packages (0.8.11)
+Requirement already satisfied: lxml>=2.3.2 in c:\python313\lib\site-packages (from python-docx) (5.4.0)

@@ -98,24 +98,6 @@ except Exception:
 logger = logging.getLogger(__name__)
 
 # ========================================
-# SERVICE CACHING - FIX FOR PERFORMANCE
-# ========================================
-
-# Global service cache to prevent repeated initialization
-_service_cache = {}
-
-def get_cached_service(service_name, service_class):
-    """Get cached service instance or create new one"""
-    if service_name not in _service_cache:
-        try:
-            _service_cache[service_name] = service_class()
-            safe_print(f"[CACHE] {service_name} service cached successfully")
-        except Exception as e:
-            safe_print(f"[CACHE_ERROR] Failed to cache {service_name}: {e}")
-            return None
-    return _service_cache[service_name]
-
-# ========================================
 # FUNÇÃO PRINCIPAL DA APLICAÇÃO
 # ========================================
 
@@ -161,59 +143,50 @@ def create_app():
                 'message': 'Não foi possível carregar a página principal'
             }), 500
     
-    # Rota de status da aplicação - FIXED VERSION
+    # Rota de status da aplicação
     @app.route('/api/app_status')
     def app_status():
         """Status geral da aplicação"""
         try:
-            # Verificar serviços usando cache
+            # Verificar serviços
             from services.websailor_integration import WebSailorIntegrationService
             from services.deep_search_service import DeepSearchService
             from services.attachment_service import AttachmentService
             from services.gemini_client import GeminiClient
             
-            # Use cached services to prevent repeated initialization
-            websailor_service = get_cached_service('websailor', WebSailorIntegrationService)
-            deep_search_service = get_cached_service('deep_search', DeepSearchService)  
-            attachment_service = get_cached_service('attachment', AttachmentService)
+            websailor_service = WebSailorIntegrationService()
+            deep_search_service = DeepSearchService()
+            attachment_service = AttachmentService()
             
-            # Gemini client check (lightweight)
             try:
-                if 'gemini' not in _service_cache:
-                    _service_cache['gemini'] = GeminiClient()
+                gemini_client = GeminiClient()
                 gemini_available = True
-            except Exception as e:
-                safe_print(f"[GEMINI_ERROR] {e}")
+            except:
                 gemini_available = False
             
-            # Build status response
             status = {
                 'app_name': 'ARQV30 Enhanced',
                 'version': '2.0.0',
                 'status': 'running',
                 'timestamp': datetime.now(timezone.utc).isoformat(),
-                'encoding_fix': 'UTF-8 Safe Mode Active',
-                'cache_status': {
-                    'cached_services': list(_service_cache.keys()),
-                    'total_cached': len(_service_cache)
-                },
+                'encoding_fix': 'UTF-8 Safe Mode Active',  # Novo campo
                 'services': {
                     'gemini': {
                         'available': gemini_available,
                         'description': 'Google Gemini Pro 2.5 para análise'
                     },
                     'websailor': {
-                        'available': websailor_service.is_available() if websailor_service else False,
-                        'status': websailor_service.get_service_status() if websailor_service else 'unavailable',
+                        'available': websailor_service.is_available(),
+                        'status': websailor_service.get_service_status(),
                         'description': 'WebSailor para navegação web avançada'
                     },
                     'deep_search': {
-                        'available': deep_search_service.is_configured() if deep_search_service else False,
+                        'available': deep_search_service.is_configured(),
                         'description': 'DeepSeek para busca profunda na internet'
                     },
                     'attachments': {
-                        'available': attachment_service.is_configured() if attachment_service else False,
-                        'stats': attachment_service.get_service_stats() if attachment_service else {},
+                        'available': attachment_service.is_configured(),
+                        'stats': attachment_service.get_service_stats(),
                         'description': 'Processamento de anexos'
                     }
                 },
@@ -247,22 +220,7 @@ def create_app():
             'status': 'healthy',
             'timestamp': datetime.now(timezone.utc).isoformat(),
             'version': '2.0.0',
-            'encoding_safe': True,
-            'cached_services': len(_service_cache)
-        })
-    
-    # Route to clear service cache if needed
-    @app.route('/api/clear_cache')
-    def clear_cache():
-        """Clear service cache - useful for debugging"""
-        global _service_cache
-        cache_count = len(_service_cache)
-        _service_cache.clear()
-        safe_print(f"[CACHE_CLEAR] Cleared {cache_count} cached services")
-        return jsonify({
-            'message': f'Cache cleared successfully',
-            'cleared_services': cache_count,
-            'timestamp': datetime.now(timezone.utc).isoformat()
+            'encoding_safe': True
         })
     
     # Handler de erro 404
@@ -360,19 +318,17 @@ def main():
     
     safe_print(f"[INFO] Servidor sera iniciado em http://{host}:{port}")
     safe_print(f"[INFO] Modo debug: {'Ativado' if debug else 'Desativado'}")
-    safe_print(f"[INFO] Service caching: Enabled")
     logger.info(f"Servidor sera iniciado em http://{host}:{port}")
     logger.info(f"Modo debug: {'Ativado' if debug else 'Desativado'}")
     
     try:
         # Iniciar servidor
         app.run(
-    host=host,
-    port=port,
-    debug=debug,
-    threaded=True,
-    use_reloader=False  # ADICIONE ESTA LINHA
-)
+            host=host,
+            port=port,
+            debug=debug,
+            threaded=True
+        )
     except KeyboardInterrupt:
         safe_print("[INFO] Servidor interrompido pelo usuario")
         logger.info("Servidor interrompido pelo usuario")

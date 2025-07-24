@@ -1,0 +1,184 @@
+2025-07-24 01:02:21,594 - __main__ - INFO - Configure-as para funcionalidades avançadas
+2025-07-24 01:02:23,278 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.5:5000
+2025-07-24 01:02:23,278 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-24 01:02:23,280 - werkzeug - INFO -  * Restarting with stat
+2025-07-24 01:02:23,550 - __main__ - INFO - Configure-as para funcionalidades avançadas
+2025-07-24 01:02:25,154 - werkzeug - WARNING -  * Debugger is active!
+2025-07-24 01:02:25,159 - werkzeug - INFO -  * Debugger PIN: 118-172-262
+2025-07-24 01:02:25,175 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:25] "GET / HTTP/1.1" 200 -
+2025-07-24 01:02:25,187 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:25] "[33mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 404 -
+2025-07-24 01:02:25,263 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:25] "GET /static/js/enhanced-analysis.js HTTP/1.1" 200 -
+2025-07-24 01:02:25,626 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:25] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:02:25,891 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:25] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:02:31,619 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:31] "GET / HTTP/1.1" 200 -
+2025-07-24 01:02:31,940 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:31] "[33mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 404 -
+2025-07-24 01:02:31,942 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:31] "GET /static/js/enhanced-analysis.js HTTP/1.1" 200 -
+2025-07-24 01:02:32,318 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:32] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:02:32,331 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:32] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:02:32,370 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:02:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 01:26:19,223 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.5:5000
+2025-07-24 01:26:19,223 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-24 01:26:19,225 - werkzeug - INFO -  * Restarting with stat
+2025-07-24 01:26:21,113 - werkzeug - WARNING -  * Debugger is active!
+2025-07-24 01:26:21,117 - werkzeug - INFO -  * Debugger PIN: 118-172-262
+2025-07-24 01:26:21,132 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:26:21] "GET / HTTP/1.1" 200 -
+2025-07-24 01:26:21,148 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:26:21] "[33mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 404 -
+2025-07-24 01:26:21,217 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:26:21] "[36mGET /static/js/enhanced-analysis.js HTTP/1.1[0m" 304 -
+2025-07-24 01:26:21,586 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:26:21] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:26:21,823 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:26:21] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:27:47,987 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:27:47] "[33mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 404 -
+2025-07-24 01:27:47,996 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:27:47] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-07-24 01:44:27,873 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:44:27,874 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:44:27,906 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:44:27,928 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.5:5000
+2025-07-24 01:44:27,929 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-24 01:44:27,930 - werkzeug - INFO -  * Restarting with stat
+2025-07-24 01:44:29,780 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:44:29,781 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:44:29,811 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:44:29,827 - werkzeug - WARNING -  * Debugger is active!
+2025-07-24 01:44:29,831 - werkzeug - INFO -  * Debugger PIN: 118-172-262
+2025-07-24 01:44:36,338 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:36] "GET / HTTP/1.1" 200 -
+2025-07-24 01:44:36,601 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:36] "GET /static/css/enhanced-styles.css HTTP/1.1" 200 -
+2025-07-24 01:44:36,666 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:36] "GET /static/js/enhanced-analysis.js HTTP/1.1" 200 -
+2025-07-24 01:44:36,678 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:44:36,685 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:44:36,685 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:44:36,686 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:36] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:44:37,002 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:44:37,006 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:44:37,007 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:44:37,007 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:37] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:44:39,435 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:39] "GET / HTTP/1.1" 200 -
+2025-07-24 01:44:39,754 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:39] "[36mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 304 -
+2025-07-24 01:44:39,754 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:39] "[36mGET /static/js/enhanced-analysis.js HTTP/1.1[0m" 304 -
+2025-07-24 01:44:40,072 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:44:40,076 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:44:40,076 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:44:40,077 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:40] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:44:40,328 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:44:40,332 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:44:40,332 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:44:40,332 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:44:40] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:45:57,067 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:45:57] "GET / HTTP/1.1" 200 -
+2025-07-24 01:45:57,085 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:45:57] "GET /static/css/enhanced-styles.css HTTP/1.1" 200 -
+2025-07-24 01:45:57,320 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:45:57] "GET /static/js/enhanced-analysis.js HTTP/1.1" 200 -
+2025-07-24 01:45:57,639 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:45:57,640 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:45:57,640 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:45:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 01:45:57,646 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:45:57,649 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:45:57,649 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:45:57,650 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:45:57] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:45:57,650 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:45:57,650 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:45:57] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:46:31,176 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:46:31,177 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:46:31,204 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:46:31,232 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.5:5000
+2025-07-24 01:46:31,232 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-24 01:46:31,234 - werkzeug - INFO -  * Restarting with stat
+2025-07-24 01:46:33,099 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:46:33,101 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:46:33,131 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:46:33,151 - werkzeug - WARNING -  * Debugger is active!
+2025-07-24 01:46:33,155 - werkzeug - INFO -  * Debugger PIN: 118-172-262
+2025-07-24 01:46:33,170 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:46:33] "GET / HTTP/1.1" 200 -
+2025-07-24 01:46:33,320 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:46:33] "[36mGET /static/js/enhanced-analysis.js HTTP/1.1[0m" 304 -
+2025-07-24 01:46:33,324 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:46:33] "[36mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 304 -
+2025-07-24 01:46:33,699 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:46:33,711 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:46:33,712 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:46:33,712 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:46:33] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:46:33,731 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:46:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 01:46:33,955 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 01:46:33,966 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 01:46:33,966 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 01:46:33,966 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:46:33] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 01:47:17,482 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:47:17] "[36mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 304 -
+2025-07-24 01:47:17,795 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 01:47:17] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-07-24 02:07:31,617 - __main__ - INFO - Iniciando ARQV30 Enhanced v2.0
+2025-07-24 02:07:31,618 - __main__ - INFO - Variaveis opcionais nao configuradas: GOOGLE_SEARCH_KEY, JINA_API_KEY
+2025-07-24 02:07:31,624 - __main__ - INFO - Cliente Supabase configurado com sucesso
+2025-07-24 02:09:04,600 - __main__ - INFO - Iniciando ARQV30 Enhanced v2.0
+2025-07-24 02:09:04,602 - __main__ - INFO - Variaveis opcionais nao configuradas: GOOGLE_SEARCH_KEY, JINA_API_KEY
+2025-07-24 02:09:04,602 - __main__ - INFO - Cliente Supabase configurado com sucesso
+2025-07-24 02:09:06,241 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 02:09:06,243 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 02:09:06,270 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 02:09:06,271 - services.websailor_integration - INFO - WebSailor inicializado com sucesso
+2025-07-24 02:09:06,279 - __main__ - INFO - Servidor sera iniciado em http://0.0.0.0:5000
+2025-07-24 02:09:06,280 - __main__ - INFO - Modo debug: Ativado
+2025-07-24 02:09:06,292 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.5:5000
+2025-07-24 02:09:06,292 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-24 02:09:06,293 - werkzeug - INFO -  * Restarting with stat
+2025-07-24 02:09:06,598 - __main__ - INFO - Iniciando ARQV30 Enhanced v2.0
+2025-07-24 02:09:06,599 - __main__ - INFO - Variaveis opcionais nao configuradas: GOOGLE_SEARCH_KEY, JINA_API_KEY
+2025-07-24 02:09:06,600 - __main__ - INFO - Cliente Supabase configurado com sucesso
+2025-07-24 02:09:08,191 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 02:09:08,193 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 02:09:08,220 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 02:09:08,221 - services.websailor_integration - INFO - WebSailor inicializado com sucesso
+2025-07-24 02:09:08,229 - __main__ - INFO - Servidor sera iniciado em http://0.0.0.0:5000
+2025-07-24 02:09:08,229 - __main__ - INFO - Modo debug: Ativado
+2025-07-24 02:09:08,234 - werkzeug - WARNING -  * Debugger is active!
+2025-07-24 02:09:08,237 - werkzeug - INFO -  * Debugger PIN: 118-172-262
+2025-07-24 02:09:08,253 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:08] "GET / HTTP/1.1" 200 -
+2025-07-24 02:09:08,398 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:08] "GET /static/js/enhanced-analysis.js HTTP/1.1" 200 -
+2025-07-24 02:09:08,402 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:08] "GET /static/css/enhanced-styles.css HTTP/1.1" 200 -
+2025-07-24 02:09:08,855 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 02:09:08,856 - services.websailor_integration - INFO - WebSailor inicializado com sucesso
+2025-07-24 02:09:08,857 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 02:09:08,857 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 02:09:08,858 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:08] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 02:09:08,887 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 02:09:09,111 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 02:09:09,112 - services.websailor_integration - INFO - WebSailor inicializado com sucesso
+2025-07-24 02:09:09,113 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 02:09:09,113 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 02:09:09,114 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:09] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 02:09:17,620 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:17] "GET / HTTP/1.1" 200 -
+2025-07-24 02:09:17,657 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:17] "GET /static/css/enhanced-styles.css HTTP/1.1" 200 -
+2025-07-24 02:09:17,871 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:17] "GET /static/js/enhanced-analysis.js HTTP/1.1" 200 -
+2025-07-24 02:09:18,189 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 02:09:18,189 - services.websailor_integration - INFO - WebSailor inicializado com sucesso
+2025-07-24 02:09:18,189 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 02:09:18,190 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 02:09:18,190 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:18] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 02:09:18,444 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 02:09:18,445 - services.websailor_integration - INFO - WebSailor inicializado com sucesso
+2025-07-24 02:09:18,446 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 02:09:18,446 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 02:09:18,447 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:18] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 02:09:18,508 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:09:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 02:11:07,116 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:11:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-07-24 02:11:07,117 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:11:07] "[36mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 304 -
+2025-07-24 02:12:07,719 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:12:07] "GET / HTTP/1.1" 200 -
+2025-07-24 02:12:07,761 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:12:07] "[36mGET /static/css/enhanced-styles.css HTTP/1.1[0m" 304 -
+2025-07-24 02:12:07,971 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:12:07] "[36mGET /static/js/enhanced-analysis.js HTTP/1.1[0m" 304 -
+2025-07-24 02:12:08,290 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 02:12:08,291 - services.websailor_integration - INFO - WebSailor inicializado com sucesso
+2025-07-24 02:12:08,291 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 02:12:08,291 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 02:12:08,292 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:12:08] "GET /api/app_status HTTP/1.1" 200 -
+2025-07-24 02:12:08,545 - services.websailor_react_agent - INFO - WebSailor agent inicializado com sucesso
+2025-07-24 02:12:08,546 - services.websailor_integration - INFO - WebSailor inicializado com sucesso
+2025-07-24 02:12:08,546 - services.attachment_service - INFO - Limpeza de arquivos antigos concluida
+2025-07-24 02:12:08,546 - services.gemini_client - INFO - Cliente Gemini inicializado com sucesso
+2025-07-24 02:12:08,547 - werkzeug - INFO - 127.0.0.1 - - [24/Jul/2025 02:12:08] "GET /api/app_status HTTP/1.1" 200 -

@@ -1,0 +1,8 @@
+Requirement already satisfied: pdfplumber in c:\python313\lib\site-packages (0.9.0)
+Requirement already satisfied: pdfminer.six==20221105 in c:\python313\lib\site-packages (from pdfplumber) (20221105)
+Requirement already satisfied: Pillow>=9.1 in c:\python313\lib\site-packages (from pdfplumber) (11.3.0)
+Requirement already satisfied: Wand>=0.6.10 in c:\python313\lib\site-packages (from pdfplumber) (0.6.13)
+Requirement already satisfied: charset-normalizer>=2.0.0 in c:\python313\lib\site-packages (from pdfminer.six==20221105->pdfplumber) (3.4.2)
+Requirement already satisfied: cryptography>=36.0.0 in c:\python313\lib\site-packages (from pdfminer.six==20221105->pdfplumber) (45.0.5)
+Requirement already satisfied: cffi>=1.14 in c:\python313\lib\site-packages (from cryptography>=36.0.0->pdfminer.six==20221105->pdfplumber) (1.17.1)
+Requirement already satisfied: pycparser in c:\python313\lib\site-packages (from cffi>=1.14->cryptography>=36.0.0->pdfminer.six==20221105->pdfplumber) (2.22)
